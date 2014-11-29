@@ -1,0 +1,29 @@
+# Theme customization - please change from the defaults!
+
+# Color for top bar, links, etc
+#highlight_color: '#3498db'
+highlight_color: '#7a7a80'
+
+# Profile links on the left sidebar, leave blank to ignore
+social:
+  github: 9minutesnooze
+  #bitbucket: philipj
+  hacker_news: AaronBBrown
+  stackexchange: 486593
+  stackoverflow: 943623
+  twitter: AaronBBrown777
+  #facebook: zuck
+  #tumblr: animalygifs
+  linkedin: aaronbbrown
+  #gplus: 110552447039675960964
+
+# "Hi, I'm _______"
+name: Aaron Brown
+email: aaron+blog@9minutesnooze.com
+tagline: "Databases, Tech, Photography"
+
+# Google Analytics key, leave blank to ignore
+google_analytics_key: UA-xxxx-x
+
+# Toggle "Postings are my own" disclaimer in footer
+show_disclaimer: true

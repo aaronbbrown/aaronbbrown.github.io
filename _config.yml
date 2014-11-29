@@ -16,3 +16,6 @@ markdown: kramdown
 highlighter: pygments
 layout: default
 comments: true
+
+lsi: false
+exclude: [LICENSE, CNAME, README.md, .gitignore, Gemfile, Gemfile.lock]
