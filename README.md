@@ -2,11 +2,10 @@
 
 * Mac OSX
 * rvm
-* boot2docker (running!)
+* docker-machine
 ```
-boot2docker download
-boot2docker init
-boot2docker up
+docker-machine start default
+eval $(docker-machine env default)
 ```
 
 # To build the Docker container
