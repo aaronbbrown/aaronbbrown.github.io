@@ -1,5 +1,5 @@
 ---
-title: 'Photographing Animals at the Zoo (Lions, and Lemurs, oh my!) [Part 1]'
+title: 'Photographing Animals at the Zoo (Lions, & Lemurs, oh my!) [Part 1]'
 author: Aaron
 layout: post
 permalink: /photographing-animals-at-the-zoo-lions-and-lemurs-oh-my-part-1/
