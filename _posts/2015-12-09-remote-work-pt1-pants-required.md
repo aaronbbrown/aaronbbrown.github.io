@@ -8,6 +8,7 @@ categories:
 tags:
   - remote
   - career
+  - work
   - pants
   - telecommute
   - telecommuting
