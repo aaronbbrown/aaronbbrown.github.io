@@ -1,6 +1,7 @@
 ---
 title: "Pants Required: Staying Productive While Working Remotely"
 author: Aaron
+excerpt: Learn techniques to remain productive while working remotely.
 layout: post
 permalink: /staying-productive-working-remotely/
 categories:
