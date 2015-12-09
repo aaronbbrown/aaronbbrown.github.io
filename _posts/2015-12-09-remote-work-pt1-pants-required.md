@@ -17,8 +17,7 @@ tags:
 
 I have spent more than half of my 15 year career as a remote employee,
 bravely venturing down the Lego-strewn hallway in my bare feet to my
-home office.
-Telecommuting has enabled me to live near family in a low-cost,
+home office.  Telecommuting has enabled me to live near family in a low-cost,
 rural area while continuing to be well compensated for
 interesting work from companies in major metropolitan areas.
 
@@ -77,7 +76,7 @@ stick with them.
 
 These boundaries need to be both spatial and temporal.
 Work time is work time. Your office is an office, not a racetrack. During work hours
-Little Miles cannot come in to play spaceships with you every 5 minutes. Your
+little Johnny cannot come in to play spaceships with you every 5 minutes. Your
 spouse can't be expecting you to be mowing the lawn and taking care of the dishes. *You are
 at work, even though your office is in the same structure as your home.*
 
@@ -131,8 +130,8 @@ changing the space you are working in.
 
 ## 7. Be flexible
 
-These aren't hard rules.  Perhaps playing spaceships with Miles for a
-few minutes is the best possible thing you can do for your sanity
+These aren't hard rules.  Perhaps playing spaceships with Johnny for a
+few minutes *is* the best possible thing you can do for your sanity
 or productivity. Get out of your office and work on the patio on that nice summer day.
 Go get a Gingerbread Latte and cream-cheese pumpkin muffin from Starbucks.
 *You work from home. It's awesome, so take advantage of it.*  Here's a secret: I fold

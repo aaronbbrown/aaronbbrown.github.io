@@ -13,6 +13,17 @@ tags:
   - telecommuting
 ---
 
+Though I have tried to make most of this article generic, providing context
+to my career may be helpful.  I lead and manage a team of Systems Engineers
+and my responsibilities are both managerial
+and technical. I am required to do everything from troubleshooting Linux
+performance issues to communicating technical concepts to upper management.
+So, while I still write my fair share of code, my job requires a high
+degree of communication with my colleagues who are mostly colocated in New
+York City.
+
+
+
 ### Communicating with peers
 
 It's hard communicating ideas, staying in touch, and
