@@ -11,6 +11,7 @@ At ideeli, there is an asynchronous process that allows internal users to import
 One day SKU imports were not completing even after running for several hours. Perhaps it was because of an upcoming very large sale - we’re really not sure - but there were over a dozen concurrently running imports and several multi-hour MySQL transactions all trying to insert into the same tables. It now was time to figure out what is actually going on.
 
 `SHOW ENGINE INNODB STATUS` had this text for several transactions:
+
 ```
 ------- TRX HAS BEEN WAITING 42 SEC FOR THIS LOCK TO BE GRANTED:
 TABLE LOCK table `db`.`table` trx id 4617 lock mode AUTO-INC waiting
