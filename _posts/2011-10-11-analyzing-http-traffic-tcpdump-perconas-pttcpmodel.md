@@ -81,11 +81,10 @@ set style line 1 linecolor rgb "#000000" lw 1
 
 plot 'packets.txt' using 1:2 title "packets" with line ls 1
 
-set terminal png font "/Library/Fonts/Arial.ttf"  
+set terminal png font "/Library/Fonts/Arial.ttf"
 set output "packets_count.png"
 
 replot
-
 ```
 
 Run that with
@@ -129,19 +128,19 @@ The columns are in the documentation, but in this case, I&#8217;m mostly interes
 Here&#8217;s some gnuplot for that:
 
 ```
-set title "TCP Port 80 - arrivals/sec"<br />
-set terminal aqua enhanced title "TCP Port 80 - arrivals/sec"<br />
-set xdata time<br />
-set xlabel "Time (UTC)"<br />
-set timefmt "%s"<br />
-set format x "%H:%M:%S"<br />
-set ylabel "per second"<br />
-set datafile separator " "<br />
-set style line 1 linecolor rgb "#000000"</p>
-<p>plot 'sliced.txt' using 1:4 title "arrivals" with line ls 1</p>
-<p>set terminal png font "/Library/Fonts/Arial.ttf"<br />
-set output "lblockups.png"</p>
-<p>replot<br />
+set title "TCP Port 80 - arrivals/sec"
+set terminal aqua enhanced title "TCP Port 80 - arrivals/sec"
+set xdata time
+set xlabel "Time (UTC)"
+set timefmt "%s"
+set format x "%H:%M:%S"
+set ylabel "per second"
+set datafile separator " "
+set style line 1 linecolor rgb "#000000"
+plot 'sliced.txt' using 1:4 title "arrivals" with line ls 1
+set terminal png font "/Library/Fonts/Arial.ttf"
+set output "lblockups.png"
+replot
 ```
 
 And here is the chart that I ended up with:  
