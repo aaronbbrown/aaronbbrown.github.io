@@ -19,8 +19,7 @@ So, we decided to perform some analysis of the raw tcp data on the edge server u
 First, grab all the traffic on the interface and write it to a pcap formatted file:
 
 ```
-# tcpdump -c 200000 -w output.pcap -i any
-
+tcpdump -c 200000 -w output.pcap -i any
 ```
 
 This command will capture 200k packets from any interface and write them to output.pcap, which can be later analyzed with a variety of tools, including tcpdump and wireshark. 
@@ -28,10 +27,9 @@ This command will capture 200k packets from any interface and write them to outp
 All we care about is the actual packet count and only for &#8220;real&#8221; packets (no SYN/ACKs) on port 80. Extract this data from the capture we just made:
 
 ```
-# tcpdump -r output.pcap -s 384 -i any -nnq -tttt \
-      'tcp port 80 and (((ip[2:2] - ((ip[0]&#038;0xf)&lt;&lt;2))
-     - ((tcp[12]&#038;0xf0)>>2)) != 0)' > port80.txt
-
+tcpdump -r output.pcap -s 384 -i any -nnq -tttt \
+    'tcp port 80 and (((ip[2:2] - ((ip[0]&0xf)<<2))
+   - ((tcp[12]&0xf0)>>2)) != 0)' > port80.txt
 ```
 
 (I stole this command from the [pt-tcp-model documentation][1] and honestly have not dived into the details of how the part after &#8216;tcp port 80&#8242; actually works).
@@ -46,14 +44,14 @@ Producing some data that looks like this (IPs hidden to protect the innocent):
 2011-10-10 12:49:02.662965 IP 98.x.x.x.ppppp > 10.x.x.x.x: tcp 463
 2011-10-10 12:49:02.662968 IP 206.x.x.x.ppppp > 10.x.x.x.x: tcp 516
 ...
-
 ```
 
 With a little bash, we can aggregate this data per second (I&#8217;m sure that there is a much more concise way of doing this, but it gets the job done):
 
 ```
-# cut -c 12-21 port80.txt  |awk '{print $1}' |  sort | uniq -c  | awk '{print $2 " " $1}' > packets_per_sec.txt
-
+cut -c 12-21 port80.txt | awk '{print $1}' |  \
+      sort | uniq -c  | \
+      awk '{print $2 " " $1}' > packets_per_sec.txt
 ```
 
 The output looks like this&#8230;packets per second grouped by second:
@@ -65,7 +63,6 @@ The output looks like this&#8230;packets per second grouped by second:
 12:49:05 1994
 12:49:06 2120
 12:49:07 2192
-
 ```
 
 Next, it&#8217;s some simple gnuplot magic to chart it all out. Here&#8217;s the plot file:
@@ -91,10 +88,11 @@ replot
 
 ```
 
-Run that with  
-`<br />
-# gnuplot file.plot<br />
-`
+Run that with
+
+```
+gnuplot file.plot
+```
 
 If you are on a Mac, AquaTerm will probably pop up and show you the graph. If not, you can open the packets_count.png file. What I got, looked like this:
 
@@ -114,7 +112,6 @@ First, following the directions verbatim, extract the data into requests and the
 # pt-tcp-model port80.txt > requests.txt
 # sort -n -k1,1 requests.txt > sorted.txt
 # pt-tcp-model --type=requests --run-time=11 sorted.txt > sliced.txt
-
 ```
 
 Now, you have sliced.txt which looks something like this:
@@ -125,12 +122,12 @@ Now, you have sliced.txt which looks something like this:
 1318265344 20.75   504.000   504   509 1.000000 20.748874 26.378252 1.166846 0.766312 1.000000
 1318265345 23.96   461.000   461   462 1.000000 23.963005 32.181679 3.929070 0.679943 1.000000
 1318265346 23.60   438.000   438   423 1.000000 23.595860 26.154968 0.421166 0.939690 1.000000
-
 ```
 
 The columns are in the documentation, but in this case, I&#8217;m mostly interested in graphing time vs the number of complete requests arriving (columns 1 and 4).
 
 Here&#8217;s some gnuplot for that:
+
 ```
 set title "TCP Port 80 - arrivals/sec"<br />
 set terminal aqua enhanced title "TCP Port 80 - arrivals/sec"<br />
